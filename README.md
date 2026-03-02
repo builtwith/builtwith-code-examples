@@ -8,6 +8,7 @@ A collection of code examples and utilities for the [BuiltWith API](https://api.
 |---|---|---|
 | [live-feed-to-slack](./live-feed-to-slack) | Stream newly detected domains from the BuiltWith Live Feed WebSocket into a Slack channel in real time | Node.js, Python |
 | [live-feed-to-salesforce](./live-feed-to-salesforce) | Stream live feed domains, enrich them with Domain API profiles, and save mapped leads to Salesforce via REST | Node.js, Python |
+| [lists-api-to-csv-enriched](./lists-api-to-csv-enriched) | Pull a technology list, enrich each domain with tech stack and company metadata via the Domain API, and export a sales-ready CSV | Node.js, Python |
 | [domain-api](./domain-api) | Look up the full technology stack and metadata for any domain | Node.js, Python |
 | [lists-api](./lists-api) | Get lists of websites using a specific technology | Node.js, Python |
 | [relationships-api](./relationships-api) | Discover connections and relationships between websites | Node.js, Python |
