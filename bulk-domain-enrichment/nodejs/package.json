@@ -1,0 +1,12 @@
+{
+  "name": "builtwith-bulk-domain-enrichment",
+  "version": "1.0.0",
+  "description": "Enrich a CSV of domains with tech categories, spend score, and country via the BuiltWith Free API or Domain API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "builtwith-live-feed-to-pipedrive",
+  "version": "1.0.0",
+  "description": "Stream BuiltWith Live Feed domains, enrich via Domain API, and upsert organizations in Pipedrive CRM",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ws": "^8.18.0"
+  }
+}

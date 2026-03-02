@@ -1,0 +1,12 @@
+{
+  "name": "builtwith-bulk-domain-api-async",
+  "version": "1.0.0",
+  "description": "CLI wrapper for the BuiltWith async bulk Domain API — submit, poll, and download results",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
