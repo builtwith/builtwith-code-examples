@@ -33,7 +33,7 @@ async function main() {
   console.log('---');
 
   // Step 1: Start the device-code flow
-  const start = await postJson('/agent-auth/start', {});
+  const start = await postJson('/agent-auth-start', {});
   const { device_code, verification_uri } = start;
   if (!device_code || !verification_uri) {
     console.error('Failed to start authorization:', start);
@@ -48,20 +48,23 @@ async function main() {
   while (Date.now() < deadline) {
     await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
 
-    const token = await postJson('/agent-auth/token', { device_code });
+    const token = await postJson('/agent-auth-token', { device_code });
 
-    if (token.status === 'approved' && token.access_token) {
+    // Approved: { access_token, token_type, expires_in }
+    if (token.access_token) {
       console.log('\nAuthorization approved!');
       console.log(`Access token: ${token.access_token}`);
       console.log('\nUse this token as your BW_API_KEY environment variable or pass it as KEY= on any BuiltWith API endpoint.');
       return;
     }
 
-    if (token.status === 'denied') {
+    // Denied: { error: 'access_denied' }
+    if (token.error === 'access_denied') {
       console.error('\nAuthorization was denied.');
       process.exit(1);
     }
 
+    // Pending: { error: 'authorization_pending' } — keep polling
     process.stdout.write('.');
   }
 
