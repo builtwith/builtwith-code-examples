@@ -33,7 +33,7 @@ async function main() {
   console.log('---');
 
   // Step 1: Start the device-code flow
-  const start = await postJson('/agent-auth-start', {});
+  const start = await postJson('/agent-auth/start', {});
   const { device_code, verification_uri } = start;
   if (!device_code || !verification_uri) {
     console.error('Failed to start authorization:', start);
@@ -48,7 +48,7 @@ async function main() {
   while (Date.now() < deadline) {
     await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
 
-    const token = await postJson('/agent-auth-token', { device_code });
+    const token = await postJson('/agent-auth/token', { device_code });
 
     // Approved: { access_token, token_type, expires_in }
     if (token.access_token) {

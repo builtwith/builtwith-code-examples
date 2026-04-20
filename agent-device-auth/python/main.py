@@ -29,7 +29,7 @@ def main():
     print("---")
 
     # Step 1: Start the device-code flow
-    start = post_json("/agent-auth-start", {})
+    start = post_json("/agent-auth/start", {})
     device_code = start.get("device_code")
     verification_uri = start.get("verification_uri")
     if not device_code or not verification_uri:
@@ -43,7 +43,7 @@ def main():
     deadline = time.time() + TIMEOUT_S
     while time.time() < deadline:
         time.sleep(POLL_INTERVAL_S)
-        token = post_json("/agent-auth-token", {"device_code": device_code})
+        token = post_json("/agent-auth/token", {"device_code": device_code})
 
         # Approved: { access_token, token_type, expires_in }
         if token.get("access_token"):
