@@ -37,6 +37,7 @@ Fundamental building blocks for looking up domains, technologies, and companies.
 | Example | Description | Languages |
 |---|---|---|
 | [domain-api](./domain-api) | 🌐 Look up the full technology stack and metadata for any domain | Node.js, Python |
+| [change-api](./change-api) | 🔄 Get technology additions and removals for domains | Node.js, Python |
 | [lists-api](./lists-api) | 📝 Get lists of websites actively using a specific technology | Node.js, Python |
 | [free-api](./free-api) | 🆓 Get summary technology counts and group data for a domain | Node.js, Python |
 | [company-to-url-api](./company-to-url-api) | 🏢 Find domains associated with a company name | Node.js, Python |
