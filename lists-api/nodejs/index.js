@@ -4,6 +4,7 @@ const https = require('https');
 
 const apiKey = process.env.BUILTWITH_API_KEY;
 const tech = process.env.TECH || 'Shopify';
+const otherTechs = process.env.OTHERTECHS || '';
 const offset = process.env.OFFSET || '';
 
 if (!apiKey || apiKey === 'your-api-key-here') {
@@ -17,6 +18,7 @@ const params = new URLSearchParams({ KEY: apiKey, TECH: tech });
 // Optional filters
 if (process.env.META === 'yes') params.append('META', 'yes');
 if (process.env.COUNTRY) params.append('COUNTRY', process.env.COUNTRY);
+if (otherTechs) params.append('OTHERTECHS', otherTechs);
 if (process.env.SINCE) params.append('SINCE', process.env.SINCE);
 if (process.env.ALL === 'yes') params.append('ALL', 'yes');
 if (offset) params.append('OFFSET', offset);
@@ -44,6 +46,7 @@ function fetch(url) {
 async function main() {
   console.log('BuiltWith Lists API');
   console.log(`Technology: ${tech}`);
+  if (otherTechs) console.log(`Other technologies: ${otherTechs}`);
   if (process.env.COUNTRY) console.log(`Country: ${process.env.COUNTRY}`);
   if (process.env.SINCE) console.log(`Since: ${process.env.SINCE}`);
   if (process.env.ALL === 'yes') console.log('Mode: all (including historical)');

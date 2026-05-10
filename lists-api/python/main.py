@@ -8,6 +8,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 api_key = os.getenv("BUILTWITH_API_KEY")
 tech = os.getenv("TECH", "Shopify")
+other_techs = os.getenv("OTHERTECHS", "")
 offset = os.getenv("OFFSET", "")
 
 if not api_key or api_key == "your-api-key-here":
@@ -21,6 +22,8 @@ if os.getenv("META") == "yes":
     params["META"] = "yes"
 if os.getenv("COUNTRY"):
     params["COUNTRY"] = os.getenv("COUNTRY")
+if other_techs:
+    params["OTHERTECHS"] = other_techs
 if os.getenv("SINCE"):
     params["SINCE"] = os.getenv("SINCE")
 if os.getenv("ALL") == "yes":
@@ -30,6 +33,8 @@ if offset:
 
 print("BuiltWith Lists API")
 print(f"Technology: {tech}")
+if other_techs:
+    print(f"Other technologies: {other_techs}")
 if os.getenv("COUNTRY"):
     print(f"Country: {os.getenv('COUNTRY')}")
 if os.getenv("SINCE"):

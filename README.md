@@ -24,6 +24,7 @@ Pull technology lists and enrich domains at scale — great for building targete
 | Example | Description | Languages |
 |---|---|---|
 | [lists-api-to-csv-enriched](./lists-api-to-csv-enriched) | 📊 Pull a technology list, enrich each domain with tech stack and company metadata, and export a sales-ready CSV | Node.js, Python |
+| [list-of-websites-using-two-technologies](./list-of-websites-using-two-technologies) | 🧩 Find websites that use one technology and also use required additional technologies with `OTHERTECHS` | Node.js, Python |
 | [bulk-domain-api-async](./bulk-domain-api-async) | ⚡ CLI wrapper for the async bulk Domain API — submit a batch, poll for completion, download results, and resume interrupted jobs | Node.js, Python |
 | [bulk-domain-enrichment](./bulk-domain-enrichment) | 🗂️ Enrich a CSV of domains with tech categories, spend score, and company metadata via the Free API or Domain API | Node.js, Python |
 | [keyword-search-to-live-high-spend](./keyword-search-to-live-high-spend) | 💰 Search for sites by keyword, enrich with the Domain API, and filter to only live sites spending $1,000+/mo on web tech | Node.js, Python |

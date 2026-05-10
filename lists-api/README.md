@@ -27,6 +27,7 @@ Get lists of websites using a specific technology, with support for filtering, m
    ```
    BUILTWITH_API_KEY=your-api-key-here
    TECH=Shopify
+   OTHERTECHS=Google-Analytics,Meta-Pixel
    ```
 
 4. Run:
@@ -55,6 +56,7 @@ Get lists of websites using a specific technology, with support for filtering, m
    ```
    BUILTWITH_API_KEY=your-api-key-here
    TECH=Shopify
+   OTHERTECHS=Google-Analytics,Meta-Pixel
    ```
 
 4. Run:
@@ -71,6 +73,7 @@ Both scripts automatically page through all results using the `NextOffset` value
 |---|---|---|
 | `BUILTWITH_API_KEY` | Yes | Your BuiltWith API key |
 | `TECH` | Yes | Technology name to search for — use dashes for spaces (default: `Shopify`) |
+| `OTHERTECHS` | No | Comma-separated technology names that each result must also use, max 16 (e.g. `Google-Analytics,Meta-Pixel`) |
 | `META` | No | Set to `yes` to include meta data (names, titles, social links, addresses, emails, phone numbers, traffic ranks) |
 | `COUNTRY` | No | Filter by country TLD/address — ISO 3166-1 alpha-2, comma-separated (e.g. `AU,NZ`). Use `UK` not `GB` |
 | `SINCE` | No | Only return sites live since a date or relative time (e.g. `2024-01-20`, `30 Days Ago`, `Last January`) |
@@ -90,4 +93,4 @@ Both examples handle pagination automatically, fetching all pages until `NextOff
 
 - **Endpoint**: `https://api.builtwith.com/lists12/api.json`
 - **Method**: GET
-- **Parameters**: `KEY`, `TECH`, `META`, `COUNTRY`, `OFFSET`, `SINCE`, `ALL`
+- **Parameters**: `KEY`, `TECH`, `OTHERTECHS`, `META`, `COUNTRY`, `OFFSET`, `SINCE`, `ALL`

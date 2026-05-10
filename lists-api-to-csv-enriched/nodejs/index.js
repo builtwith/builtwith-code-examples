@@ -6,6 +6,7 @@ const path = require('path');
 
 const API_KEY = process.env.BUILTWITH_API_KEY;
 const TECH = process.env.TECH || 'Shopify';
+const OTHERTECHS = process.env.OTHERTECHS || '';
 const MAX_DOMAINS = parseInt(process.env.MAX_DOMAINS || '50', 10);
 const COUNTRY = process.env.COUNTRY || '';
 const SINCE = process.env.SINCE || '';
@@ -115,9 +116,10 @@ function sleep(ms) {
 
 // --- Lists API ---
 
-async function fetchDomains(tech, maxDomains, country, since) {
+async function fetchDomains(tech, otherTechs, maxDomains, country, since) {
   const entries = [];
   const baseParams = new URLSearchParams({ KEY: API_KEY, TECH: tech });
+  if (otherTechs) baseParams.append('OTHERTECHS', otherTechs);
   if (country) baseParams.append('COUNTRY', country);
   if (since) baseParams.append('SINCE', since);
 
@@ -215,6 +217,7 @@ function buildRow(listEntry, profile) {
 async function main() {
   console.log('BuiltWith Lists API → CSV Enriched');
   console.log(`Technology:   ${TECH}`);
+  if (OTHERTECHS) console.log(`Other techs:   ${OTHERTECHS}`);
   console.log(`Max domains:  ${MAX_DOMAINS}`);
   console.log(`Output file:  ${OUTPUT_FILE}`);
   if (COUNTRY) console.log(`Country:      ${COUNTRY}`);
@@ -223,7 +226,7 @@ async function main() {
   console.log('---');
 
   console.log('Step 1: Fetching domain list...');
-  const listEntries = await fetchDomains(TECH, MAX_DOMAINS, COUNTRY, SINCE);
+  const listEntries = await fetchDomains(TECH, OTHERTECHS, MAX_DOMAINS, COUNTRY, SINCE);
   console.log(`  Fetched ${listEntries.length} domains`);
 
   console.log('Step 2: Enriching with Domain API...');

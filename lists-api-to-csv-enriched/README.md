@@ -54,6 +54,7 @@ Each row in the output CSV covers one domain with the following columns:
    ```
    BUILTWITH_API_KEY=your-api-key-here
    TECH=Shopify
+   OTHERTECHS=Google-Analytics,Meta-Pixel
    MAX_DOMAINS=50
    ```
 
@@ -83,6 +84,7 @@ Each row in the output CSV covers one domain with the following columns:
    ```
    BUILTWITH_API_KEY=your-api-key-here
    TECH=Shopify
+   OTHERTECHS=Google-Analytics,Meta-Pixel
    MAX_DOMAINS=50
    ```
 
@@ -100,6 +102,7 @@ The CSV is written to `<tech>-enriched.csv` (e.g. `shopify-enriched.csv`) in the
 |---|---|---|---|
 | `BUILTWITH_API_KEY` | Yes | — | Your BuiltWith API key |
 | `TECH` | Yes | `Shopify` | Technology name to search — use dashes for spaces |
+| `OTHERTECHS` | No | — | Comma-separated technology names that each result must also use, max 16 |
 | `MAX_DOMAINS` | No | `50` | Maximum number of domains to fetch and enrich |
 | `OUTPUT_FILE` | No | `<tech>-enriched.csv` | CSV output filename |
 | `COUNTRY` | No | — | ISO 3166-1 alpha-2 country code(s), comma-separated (use `UK` not `GB`) |

@@ -10,6 +10,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 API_KEY = os.getenv("BUILTWITH_API_KEY")
 TECH = os.getenv("TECH", "Shopify")
+OTHERTECHS = os.getenv("OTHERTECHS", "")
 MAX_DOMAINS = int(os.getenv("MAX_DOMAINS", "50"))
 COUNTRY = os.getenv("COUNTRY", "")
 SINCE = os.getenv("SINCE", "")
@@ -77,9 +78,11 @@ def find_social(meta, keyword):
     return ""
 
 
-def fetch_domains(tech, max_domains, country, since):
+def fetch_domains(tech, other_techs, max_domains, country, since):
     domains = []
     params = {"KEY": API_KEY, "TECH": tech}
+    if other_techs:
+        params["OTHERTECHS"] = other_techs
     if country:
         params["COUNTRY"] = country
     if since:
@@ -184,6 +187,8 @@ def build_row(list_entry, profile):
 
 print("BuiltWith Lists API → CSV Enriched")
 print(f"Technology:   {TECH}")
+if OTHERTECHS:
+    print(f"Other techs:   {OTHERTECHS}")
 print(f"Max domains:  {MAX_DOMAINS}")
 print(f"Output file:  {OUTPUT_FILE}")
 if COUNTRY:
@@ -194,7 +199,7 @@ print(f"Live only:    {LIVEONLY}")
 print("---")
 
 print("Step 1: Fetching domain list...")
-list_entries = fetch_domains(TECH, MAX_DOMAINS, COUNTRY, SINCE)
+list_entries = fetch_domains(TECH, OTHERTECHS, MAX_DOMAINS, COUNTRY, SINCE)
 print(f"  Fetched {len(list_entries)} domains")
 
 print("Step 2: Enriching with Domain API...")
