@@ -14,6 +14,11 @@ if (!apiKey || apiKey === 'your-api-key-here') {
 }
 
 const params = new URLSearchParams({ KEY: apiKey, TECH: tech });
+const attributeFilters = [
+  'SPEND', 'REVENUE', 'SKU', 'FOLLOWERS', 'EMPLOYEES', 'SITEMAP',
+  'PAGERANK', 'BWRANK', 'TRANCO', 'MAJESTIC', 'BWS', 'ECAT',
+  'AIM', 'AIO', 'AIR', 'AIV',
+];
 
 // Optional filters
 if (process.env.META === 'yes') params.append('META', 'yes');
@@ -22,6 +27,9 @@ if (otherTechs) params.append('OTHERTECHS', otherTechs);
 if (process.env.SINCE) params.append('SINCE', process.env.SINCE);
 if (process.env.ALL === 'yes') params.append('ALL', 'yes');
 if (offset) params.append('OFFSET', offset);
+for (const filterName of attributeFilters) {
+  if (process.env[filterName]) params.append(filterName, process.env[filterName]);
+}
 
 function fetch(url) {
   return new Promise((resolve, reject) => {
@@ -49,6 +57,9 @@ async function main() {
   if (otherTechs) console.log(`Other technologies: ${otherTechs}`);
   if (process.env.COUNTRY) console.log(`Country: ${process.env.COUNTRY}`);
   if (process.env.SINCE) console.log(`Since: ${process.env.SINCE}`);
+  for (const filterName of attributeFilters) {
+    if (process.env[filterName]) console.log(`${filterName}: ${process.env[filterName]}`);
+  }
   if (process.env.ALL === 'yes') console.log('Mode: all (including historical)');
   if (process.env.META === 'yes') console.log('Meta data: included');
   console.log('---');

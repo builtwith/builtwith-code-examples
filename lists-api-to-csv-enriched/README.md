@@ -107,8 +107,13 @@ The CSV is written to `<tech>-enriched.csv` (e.g. `shopify-enriched.csv`) in the
 | `OUTPUT_FILE` | No | `<tech>-enriched.csv` | CSV output filename |
 | `COUNTRY` | No | — | ISO 3166-1 alpha-2 country code(s), comma-separated (use `UK` not `GB`) |
 | `SINCE` | No | — | Only return sites detected since a date or relative time, e.g. `2024-01-01`, `30 Days Ago` |
+| `SPEND` | No | — | Monthly technology spend filter using `number|operator`, e.g. `100|GT` |
+| `REVENUE` | No | — | Estimated ecommerce sales revenue filter, e.g. `100000|GT` |
+| `SKU`, `FOLLOWERS`, `EMPLOYEES`, `SITEMAP`, `PAGERANK`, `BWRANK`, `TRANCO`, `MAJESTIC`, `BWS`, `ECAT`, `AIM`, `AIO`, `AIR`, `AIV` | No | — | Additional numeric attribute filters |
 | `LIVEONLY` | No | `true` | Keep only currently live technologies in the Domain API response |
 | `ENRICH_DELAY` | No | `0.5` | Seconds to wait between Domain API calls |
+
+Numeric Lists API filters support `EQ`, `LT`, `LTE`, `GT`, and `GTE`; if omitted, `GTE` is used. Multiple attribute filters are combined with AND.
 
 ## How it works
 

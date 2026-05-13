@@ -12,6 +12,11 @@ const COUNTRY = process.env.COUNTRY || '';
 const SINCE = process.env.SINCE || '';
 const LIVEONLY = (process.env.LIVEONLY || 'true').toLowerCase() !== 'false';
 const ENRICH_DELAY = parseFloat(process.env.ENRICH_DELAY || '0.5') * 1000;
+const ATTRIBUTE_FILTERS = [
+  'SPEND', 'REVENUE', 'SKU', 'FOLLOWERS', 'EMPLOYEES', 'SITEMAP',
+  'PAGERANK', 'BWRANK', 'TRANCO', 'MAJESTIC', 'BWS', 'ECAT',
+  'AIM', 'AIO', 'AIR', 'AIV',
+];
 
 const safeTech = TECH.toLowerCase().replace(/\s+/g, '-');
 const OUTPUT_FILE = process.env.OUTPUT_FILE || `${safeTech}-enriched.csv`;
@@ -122,6 +127,9 @@ async function fetchDomains(tech, otherTechs, maxDomains, country, since) {
   if (otherTechs) baseParams.append('OTHERTECHS', otherTechs);
   if (country) baseParams.append('COUNTRY', country);
   if (since) baseParams.append('SINCE', since);
+  for (const filterName of ATTRIBUTE_FILTERS) {
+    if (process.env[filterName]) baseParams.append(filterName, process.env[filterName]);
+  }
 
   let offset = '';
   let page = 1;

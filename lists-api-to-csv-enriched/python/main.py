@@ -16,6 +16,11 @@ COUNTRY = os.getenv("COUNTRY", "")
 SINCE = os.getenv("SINCE", "")
 LIVEONLY = os.getenv("LIVEONLY", "true").lower() in ("1", "true", "y", "yes")
 ENRICH_DELAY = float(os.getenv("ENRICH_DELAY", "0.5"))
+ATTRIBUTE_FILTERS = [
+    "SPEND", "REVENUE", "SKU", "FOLLOWERS", "EMPLOYEES", "SITEMAP",
+    "PAGERANK", "BWRANK", "TRANCO", "MAJESTIC", "BWS", "ECAT",
+    "AIM", "AIO", "AIR", "AIV",
+]
 
 safe_tech_name = TECH.lower().replace(" ", "-")
 default_output = f"{safe_tech_name}-enriched.csv"
@@ -87,6 +92,9 @@ def fetch_domains(tech, other_techs, max_domains, country, since):
         params["COUNTRY"] = country
     if since:
         params["SINCE"] = since
+    for filter_name in ATTRIBUTE_FILTERS:
+        if os.getenv(filter_name):
+            params[filter_name] = os.getenv(filter_name)
 
     offset = ""
     page = 1

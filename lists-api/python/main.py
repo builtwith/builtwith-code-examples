@@ -17,6 +17,11 @@ if not api_key or api_key == "your-api-key-here":
     sys.exit(1)
 
 params = {"KEY": api_key, "TECH": tech}
+attribute_filters = [
+    "SPEND", "REVENUE", "SKU", "FOLLOWERS", "EMPLOYEES", "SITEMAP",
+    "PAGERANK", "BWRANK", "TRANCO", "MAJESTIC", "BWS", "ECAT",
+    "AIM", "AIO", "AIR", "AIV",
+]
 
 if os.getenv("META") == "yes":
     params["META"] = "yes"
@@ -30,6 +35,9 @@ if os.getenv("ALL") == "yes":
     params["ALL"] = "yes"
 if offset:
     params["OFFSET"] = offset
+for filter_name in attribute_filters:
+    if os.getenv(filter_name):
+        params[filter_name] = os.getenv(filter_name)
 
 print("BuiltWith Lists API")
 print(f"Technology: {tech}")
@@ -39,6 +47,9 @@ if os.getenv("COUNTRY"):
     print(f"Country: {os.getenv('COUNTRY')}")
 if os.getenv("SINCE"):
     print(f"Since: {os.getenv('SINCE')}")
+for filter_name in attribute_filters:
+    if os.getenv(filter_name):
+        print(f"{filter_name}: {os.getenv(filter_name)}")
 if os.getenv("ALL") == "yes":
     print("Mode: all (including historical)")
 if os.getenv("META") == "yes":
