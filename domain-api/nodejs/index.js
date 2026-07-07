@@ -19,7 +19,7 @@ if (process.env.NOPII === 'true') params.append('NOPII', 'y');
 if (process.env.NOMETA === 'true') params.append('NOMETA', 'y');
 if (process.env.NOATTR === 'true') params.append('NOATTR', 'y');
 
-const url = `https://api.builtwith.com/v22/api.json?${params.toString()}`;
+const url = `https://api.builtwith.com/v23/api.json?${params.toString()}`;
 
 console.log('BuiltWith Domain API');
 console.log(`Looking up: ${lookup}`);

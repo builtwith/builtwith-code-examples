@@ -114,7 +114,7 @@ async function submitJob(domains) {
   const payload = { lookups: domains };
   if (Object.keys(options).length > 0) payload.options = options;
 
-  const res = await request('POST', `${BASE_URL}/v22/domain/bulk?KEY=${API_KEY}`, payload);
+  const res = await request('POST', `${BASE_URL}/v23/domain/bulk?KEY=${API_KEY}`, payload);
   if (res.status !== 200) {
     console.error(`Submission failed (HTTP ${res.status}):`);
     console.error(JSON.stringify(res.body, null, 2));
@@ -124,13 +124,13 @@ async function submitJob(domains) {
 }
 
 async function checkStatus(jobId) {
-  const res = await request('GET', `${BASE_URL}/v22/domain/bulk/${jobId}?KEY=${API_KEY}`);
+  const res = await request('GET', `${BASE_URL}/v23/domain/bulk/${jobId}?KEY=${API_KEY}`);
   if (res.status !== 200) throw new Error(`Status check failed (HTTP ${res.status}): ${JSON.stringify(res.body)}`);
   return res.body;
 }
 
 async function fetchResults(jobId) {
-  const res = await request('GET', `${BASE_URL}/v22/domain/bulk/${jobId}/result?KEY=${API_KEY}`);
+  const res = await request('GET', `${BASE_URL}/v23/domain/bulk/${jobId}/result?KEY=${API_KEY}`);
   if (res.status !== 200) throw new Error(`Result fetch failed (HTTP ${res.status}): ${JSON.stringify(res.body)}`);
   return res.body;
 }

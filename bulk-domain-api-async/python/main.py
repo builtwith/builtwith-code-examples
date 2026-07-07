@@ -67,7 +67,7 @@ def submit_job(domains):
         payload["options"] = options
 
     res = requests.post(
-        f"{BASE_URL}/v22/domain/bulk",
+        f"{BASE_URL}/v23/domain/bulk",
         params={"KEY": API_KEY},
         json=payload,
         timeout=30,
@@ -83,7 +83,7 @@ def submit_job(domains):
 
 def check_status(job_id):
     res = requests.get(
-        f"{BASE_URL}/v22/domain/bulk/{job_id}",
+        f"{BASE_URL}/v23/domain/bulk/{job_id}",
         params={"KEY": API_KEY},
         timeout=30,
     )
@@ -94,7 +94,7 @@ def check_status(job_id):
 
 def fetch_results(job_id):
     res = requests.get(
-        f"{BASE_URL}/v22/domain/bulk/{job_id}/result",
+        f"{BASE_URL}/v23/domain/bulk/{job_id}/result",
         params={"KEY": API_KEY},
         timeout=60,
     )

@@ -90,7 +90,7 @@ async function fetchKeywordSites(keyword, maxResults) {
 
 async function enrichDomain(domain) {
   const params = new URLSearchParams({ KEY: API_KEY, LOOKUP: domain, LIVEONLY: 'y' });
-  const data = await httpGet(`https://api.builtwith.com/v22/api.json?${params}`);
+  const data = await httpGet(`https://api.builtwith.com/v23/api.json?${params}`);
   const results = data.Results || [];
   return results[0] || null;
 }

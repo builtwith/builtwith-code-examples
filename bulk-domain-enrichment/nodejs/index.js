@@ -184,7 +184,7 @@ async function enrichFull(domain) {
   const params = new URLSearchParams({ KEY: API_KEY, LOOKUP: domain });
   if (LIVEONLY) params.append('LIVEONLY', 'y');
 
-  const data = await httpGet(`https://api.builtwith.com/v22/api.json?${params}`);
+  const data = await httpGet(`https://api.builtwith.com/v23/api.json?${params}`);
   const results = data.Results || [];
   if (results.length === 0) return Object.fromEntries(FULL_COLUMNS.map((c) => [c, '']));
 

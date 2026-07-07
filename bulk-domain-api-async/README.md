@@ -117,10 +117,10 @@ The script skips submission and goes straight to polling.
 ## How it works
 
 1. **Load** domains from file, env var, or stdin
-2. **Submit** `POST /v22/domain/bulk` with the domain list and options
+2. **Submit** `POST /v23/domain/bulk` with the domain list and options
 3. **Sync response** — if the batch is small enough, the API returns results immediately; the script saves them and exits
-4. **Async response** — for larger batches, the API returns a `job_id`; the script saves it to `JOB_ID_FILE` and polls `GET /v22/domain/bulk/{job_id}` until `status == complete`
-5. **Download** results from `GET /v22/domain/bulk/{job_id}/result` (one-time endpoint) and write to `OUTPUT_FILE`
+4. **Async response** — for larger batches, the API returns a `job_id`; the script saves it to `JOB_ID_FILE` and polls `GET /v23/domain/bulk/{job_id}` until `status == complete`
+5. **Download** results from `GET /v23/domain/bulk/{job_id}/result` (one-time endpoint) and write to `OUTPUT_FILE`
 
 ## Project structure
 

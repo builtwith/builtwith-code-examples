@@ -106,20 +106,20 @@ python bulk.py
 1. **Submit** — POST a JSON list of domains with options
 2. **Small batches** — If the batch is within the sync limit, results come back immediately in the same response
 3. **Large batches** — The API returns a `job_id` with status `queued`. The script then:
-   - Polls `GET /v22/domain/bulk/{job_id}` until status is `complete`
-   - Downloads results from `GET /v22/domain/bulk/{job_id}/result`
+   - Polls `GET /v23/domain/bulk/{job_id}` until status is `complete`
+   - Downloads results from `GET /v23/domain/bulk/{job_id}/result`
 4. **Results are deleted after first access** — save the output if you need it
 
 ## API Reference
 
 ### Single lookup
 
-- **Endpoint**: `https://api.builtwith.com/v22/api.json`
+- **Endpoint**: `https://api.builtwith.com/v23/api.json`
 - **Method**: GET
 - **Parameters**: `KEY`, `LOOKUP`, `LIVEONLY`, `NOPII`, `NOMETA`, `NOATTR`, `FDRANGE`, `LDRANGE`
 
 ### Bulk lookup
 
-- **Submit**: `POST https://api.builtwith.com/v22/domain/bulk?KEY=...`
-- **Check status**: `GET https://api.builtwith.com/v22/domain/bulk/{job_id}?KEY=...`
-- **Get results**: `GET https://api.builtwith.com/v22/domain/bulk/{job_id}/result?KEY=...`
+- **Submit**: `POST https://api.builtwith.com/v23/domain/bulk?KEY=...`
+- **Check status**: `GET https://api.builtwith.com/v23/domain/bulk/{job_id}?KEY=...`
+- **Get results**: `GET https://api.builtwith.com/v23/domain/bulk/{job_id}/result?KEY=...`

@@ -98,7 +98,7 @@ def get_domain_profile(domain):
     if DOMAIN_API_NOATTR:
         params["NOATTR"] = "y"
 
-    response = requests.get("https://api.builtwith.com/v22/api.json", params=params, timeout=30)
+    response = requests.get("https://api.builtwith.com/v23/api.json", params=params, timeout=30)
     response.raise_for_status()
     data = response.json()
 

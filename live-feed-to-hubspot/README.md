@@ -82,7 +82,7 @@ Stream newly detected domains from the [BuiltWith Live Feed](https://api.builtwi
 
 ## Contact Mapping
 
-Each live feed domain is enriched via `GET /v22/api.json` and mapped to a HubSpot Contact:
+Each live feed domain is enriched via `GET /v23/api.json` and mapped to a HubSpot Contact:
 
 | HubSpot property | Source |
 |---|---|

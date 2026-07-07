@@ -54,7 +54,6 @@ Uncover hidden connections between websites, technologies, and social profiles.
 | [relationships-api](./relationships-api) | 🔗 Discover connections and relationships between websites | Node.js, Python |
 | [tags-api](./tags-api) | 🏷️ Find domains related to IP addresses and site attributes | Node.js, Python |
 | [recommendations-api](./recommendations-api) | 💡 Get technology recommendations based on what similar sites use | Node.js, Python |
-| [social-api](./social-api) | 📱 Look up domains linked to social media profiles | Node.js, Python |
 | [redirects-api](./redirects-api) | ↪️ Track live and historical domain redirects | Node.js, Python |
 
 ---

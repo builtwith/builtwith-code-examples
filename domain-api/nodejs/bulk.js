@@ -66,7 +66,7 @@ function sleep(ms) {
 }
 
 async function checkStatus(jobId) {
-  const url = `https://api.builtwith.com/v22/domain/bulk/${jobId}?KEY=${apiKey}`;
+  const url = `https://api.builtwith.com/v23/domain/bulk/${jobId}?KEY=${apiKey}`;
   const res = await request('GET', url);
 
   if (res.status !== 200) {
@@ -77,7 +77,7 @@ async function checkStatus(jobId) {
 }
 
 async function getResults(jobId) {
-  const url = `https://api.builtwith.com/v22/domain/bulk/${jobId}/result?KEY=${apiKey}`;
+  const url = `https://api.builtwith.com/v23/domain/bulk/${jobId}/result?KEY=${apiKey}`;
   const res = await request('GET', url);
 
   if (res.status !== 200) {
@@ -93,7 +93,7 @@ async function main() {
   console.log('---');
 
   // Submit bulk request
-  const submitUrl = `https://api.builtwith.com/v22/domain/bulk?KEY=${apiKey}`;
+  const submitUrl = `https://api.builtwith.com/v23/domain/bulk?KEY=${apiKey}`;
   const payload = { lookups: domainList, options };
 
   console.log('Submitting bulk request...');

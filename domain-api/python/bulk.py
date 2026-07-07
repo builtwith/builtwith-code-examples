@@ -36,7 +36,7 @@ print("---")
 
 # Submit bulk request
 print("Submitting bulk request...")
-submit_url = "https://api.builtwith.com/v22/domain/bulk"
+submit_url = "https://api.builtwith.com/v23/domain/bulk"
 res = requests.post(submit_url, params={"KEY": api_key}, json={"lookups": domain_list, "options": options})
 
 if res.status_code != 200:
@@ -60,7 +60,7 @@ print(f"Polling every {poll_interval}s...")
 while True:
     time.sleep(poll_interval)
 
-    status_res = requests.get(f"https://api.builtwith.com/v22/domain/bulk/{job_id}", params={"KEY": api_key})
+    status_res = requests.get(f"https://api.builtwith.com/v23/domain/bulk/{job_id}", params={"KEY": api_key})
     if status_res.status_code != 200:
         print(f"Status check failed (HTTP {status_res.status_code}): {json.dumps(status_res.json(), indent=2)}", file=sys.stderr)
         sys.exit(1)
@@ -71,7 +71,7 @@ while True:
     if status.get("status") == "complete":
         print("---")
         print("Fetching results (one-time download)...")
-        result_res = requests.get(f"https://api.builtwith.com/v22/domain/bulk/{job_id}/result", params={"KEY": api_key})
+        result_res = requests.get(f"https://api.builtwith.com/v23/domain/bulk/{job_id}/result", params={"KEY": api_key})
         if result_res.status_code != 200:
             print(f"Result fetch failed (HTTP {result_res.status_code}): {json.dumps(result_res.json(), indent=2)}", file=sys.stderr)
             sys.exit(1)

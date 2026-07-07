@@ -142,7 +142,7 @@ def enrich_full(domain):
     if LIVEONLY:
         params["LIVEONLY"] = "y"
 
-    res = requests.get("https://api.builtwith.com/v22/api.json", params=params, timeout=30)
+    res = requests.get("https://api.builtwith.com/v23/api.json", params=params, timeout=30)
     res.raise_for_status()
     data = res.json()
 

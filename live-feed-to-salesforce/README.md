@@ -99,7 +99,7 @@ Stream newly detected domains from the [BuiltWith Live Feed](https://api.builtwi
 
 ## Lead Mapping
 
-Each live feed domain is enriched via `GET /v22/api.json` and mapped to a Salesforce Lead payload:
+Each live feed domain is enriched via `GET /v23/api.json` and mapped to a Salesforce Lead payload:
 
 - `LastName`: first discovered contact name (`Meta.Names[0].Name`) or domain fallback
 - `Company`: `Meta.CompanyName` or domain fallback

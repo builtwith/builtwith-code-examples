@@ -29,6 +29,6 @@ if os.getenv("NOMETA") == "true":
 if os.getenv("NOATTR") == "true":
     params["NOATTR"] = "y"
 
-response = requests.get("https://api.builtwith.com/v22/api.json", params=params)
+response = requests.get("https://api.builtwith.com/v23/api.json", params=params)
 response.raise_for_status()
 print(json.dumps(response.json(), indent=2))
