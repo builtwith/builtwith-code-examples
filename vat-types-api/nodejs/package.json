@@ -1,0 +1,9 @@
+{
+  "name": "builtwith-vat-types-api",
+  "version": "1.0.0",
+  "description": "List all VAT registration types using the BuiltWith VAT Types API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

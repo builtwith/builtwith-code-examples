@@ -1,0 +1,12 @@
+{
+  "name": "builtwith-vat-api",
+  "version": "1.0.0",
+  "description": "Look up VAT, GST, and other company registration numbers using the BuiltWith VAT API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}

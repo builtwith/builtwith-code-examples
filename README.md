@@ -68,6 +68,8 @@ Analyze technology adoption over time and evaluate domain signals.
 | [keywords-api](./keywords-api) | 🔑 Extract keywords and topics associated with a domain | Node.js, Python |
 | [product-api](./product-api) | 🛒 Find websites selling specific products | Node.js, Python |
 | [trust-api](./trust-api) | 🛡️ Evaluate trust and fraud signals for a domain | Node.js, Python |
+| [vat-api](./vat-api) | 🧾 Look up VAT, GST, and other company registration numbers for a domain | Node.js, Python |
+| [vat-types-api](./vat-types-api) | 🧾 List all VAT registration types (no API key required) | Node.js, Python |
 
 ---
 
