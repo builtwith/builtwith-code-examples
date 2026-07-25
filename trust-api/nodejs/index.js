@@ -12,7 +12,7 @@ if (!apiKey || apiKey === 'your-api-key-here') {
 }
 
 const params = new URLSearchParams({ KEY: apiKey, LOOKUP: lookup });
-const url = `https://api.builtwith.com/trustv1/api.json?${params.toString()}`;
+const url = `https://api.builtwith.com/trustv2/api.json?${params.toString()}`;
 
 console.log('BuiltWith Trust API');
 console.log(`Looking up: ${lookup}`);

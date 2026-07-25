@@ -18,6 +18,6 @@ print("BuiltWith Trust API")
 print(f"Looking up: {lookup}")
 print("---")
 
-response = requests.get("https://api.builtwith.com/trustv1/api.json", params={"KEY": api_key, "LOOKUP": lookup})
+response = requests.get("https://api.builtwith.com/trustv2/api.json", params={"KEY": api_key, "LOOKUP": lookup})
 response.raise_for_status()
 print(json.dumps(response.json(), indent=2))

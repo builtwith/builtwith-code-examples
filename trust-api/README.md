@@ -72,6 +72,6 @@ Evaluate trust and fraud signals for a domain.
 
 ## API Reference
 
-- **Endpoint**: `https://api.builtwith.com/trustv1/api.json`
+- **Endpoint**: `https://api.builtwith.com/trustv2/api.json`
 - **Method**: GET
 - **Parameters**: `KEY`, `LOOKUP`
