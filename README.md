@@ -70,7 +70,8 @@ Analyze technology adoption over time and evaluate domain signals.
 | [trust-api](./trust-api) | 🛡️ Evaluate trust and fraud signals for a domain | Node.js, Python |
 | [vat-api](./vat-api) | 🧾 Look up VAT, GST, and other company registration numbers for a domain | Node.js, Python |
 | [vat-types-api](./vat-types-api) | 🧾 List all VAT registration types (no API key required) | Node.js, Python |
-| [mcp-registry-api](./mcp-registry-api) | 🔌 Search and browse the BuiltWith MCP registry of discovered remote MCP servers (no API credits) | Node.js, Python |
+| [mcp-registry-api](./mcp-registry-api) | 🔌 Search and browse the BuiltWith MCP registry (v1) of discovered remote MCP servers (no API credits) | Node.js, Python |
+| [mcp-registry-v2-api](./mcp-registry-v2-api) | 🔌 Search and browse the BuiltWith MCP registry (v2), with per-endpoint auth flags and first/last detected dates (no API credits) | Node.js, Python |
 
 ---
 
