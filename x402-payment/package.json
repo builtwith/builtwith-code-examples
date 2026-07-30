@@ -1,0 +1,23 @@
+{
+  "name": "builtwith-x402-domain-lookup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small CommonJS client for BuiltWith MCP domain lookups paid with USDC on Base via x402.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "lookup": "node index.js",
+    "quote": "node index.js --quote",
+    "check": "node --check index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@x402/core": "2.20.0",
+    "@x402/evm": "2.20.0",
+    "dotenv": "17.2.3",
+    "viem": "2.55.10"
+  }
+}

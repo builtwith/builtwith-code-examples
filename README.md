@@ -86,10 +86,22 @@ Check your credentials, usage, and quota.
 
 ---
 
+## 💳 Payments
+
+Purchase and use BuiltWith API credits without a conventional API subscription.
+
+| Example | Description | Languages |
+|---|---|---|
+| [x402-payment](./x402-payment) | 💵 Buy a reusable BuiltWith credit package with USDC on Base via x402, then spend those credits on MCP domain lookups | Node.js |
+
+---
+
 ## 🏁 Getting Started
 
 1. **Get an API key** — grab one at [api.builtwith.com](https://api.builtwith.com)
 2. **Pick an example** — browse the sections above and navigate into the folder
 3. **Follow the README** — each example has its own setup instructions for both Node.js and Python
 
-> 💡 All examples accept your API key via an environment variable — no hardcoded secrets needed.
+> 💡 Examples that require a BuiltWith API key read it from an environment
+> variable—no hardcoded secrets needed. The x402 example purchases its own
+> prepaid credits instead.
