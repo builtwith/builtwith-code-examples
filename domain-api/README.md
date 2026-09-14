@@ -1,5 +1,9 @@
 # BuiltWith Domain API
 
+## Domain API v25
+
+Domain lookups now use API v25. Technology records include numeric `confidence` scores from 0 to 1. Full JSON responses include `Meta.company_reg`, an array of company registration records with string `type` and `number` fields; registration numbers preserve leading zeros. The array is empty when unavailable or metadata is excluded. See the [API reference](https://api.builtwith.com/llms.txt). Asynchronous bulk jobs continue to use the separate `/v23/domain/bulk` endpoints.
+
 Look up the full technology stack, metadata, and history for any domain. Includes a bulk lookup script for multiple domains.
 
 ## Prerequisites
@@ -114,7 +118,7 @@ python bulk.py
 
 ### Single lookup
 
-- **Endpoint**: `https://api.builtwith.com/v23/api.json`
+- **Endpoint**: `https://api.builtwith.com/v25/api.json`
 - **Method**: GET
 - **Parameters**: `KEY`, `LOOKUP`, `LIVEONLY`, `NOPII`, `NOMETA`, `NOATTR`, `FDRANGE`, `LDRANGE`
 

@@ -1,5 +1,9 @@
 # 🏗️ BuiltWith Code Examples
 
+## Domain API v25
+
+Domain lookups now use API v25. Technology records include numeric `confidence` scores from 0 to 1. Full JSON responses include `Meta.company_reg`, an array of company registration records with string `type` and `number` fields; registration numbers preserve leading zeros. The array is empty when unavailable or metadata is excluded. See the [API reference](https://api.builtwith.com/llms.txt). Asynchronous bulk jobs continue to use the separate `/v23/domain/bulk` endpoints.
+
 > A collection of ready-to-run examples and utilities for the [BuiltWith API](https://api.builtwith.com) — helping you build smarter sales pipelines, enrich CRMs, and analyze the web's technology landscape.
 
 ---
