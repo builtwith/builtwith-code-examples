@@ -35,6 +35,10 @@ Pull technology lists and enrich domains at scale — great for building targete
 
 ---
 
+## Python SDK
+
+[Official Python SDK example](./python-sdk) — a public, credit-free quick start and a typed agent tool using the standalone SDK.
+
 ## 🔍 Core API Examples
 
 Fundamental building blocks for looking up domains, technologies, and companies.
