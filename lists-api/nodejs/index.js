@@ -72,7 +72,7 @@ async function main() {
     const pageParams = new URLSearchParams(params);
     if (currentOffset) pageParams.set('OFFSET', currentOffset);
 
-    const url = `https://api.builtwith.com/lists12/api.json?${pageParams.toString()}`;
+    const url = `https://api.builtwith.com/lists13/api.json?${pageParams.toString()}`;
 
     console.log(`Fetching page ${page}...`);
     const result = await fetch(url);

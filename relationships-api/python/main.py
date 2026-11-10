@@ -18,6 +18,6 @@ print("BuiltWith Relationships API")
 print(f"Looking up: {lookup}")
 print("---")
 
-response = requests.get("https://api.builtwith.com/rv4/api.json", params={"KEY": api_key, "LOOKUP": lookup})
+response = requests.get("https://api.builtwith.com/rv5/api.json", params={"KEY": api_key, "LOOKUP": lookup, "PAGE": os.getenv("PAGE", "1"), "IP": os.getenv("IP", "no")})
 response.raise_for_status()
 print(json.dumps(response.json(), indent=2))

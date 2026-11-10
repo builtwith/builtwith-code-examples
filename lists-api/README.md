@@ -102,6 +102,6 @@ Both examples handle pagination automatically, fetching all pages until `NextOff
 
 ## API Reference
 
-- **Endpoint**: `https://api.builtwith.com/lists12/api.json`
+- **Endpoint**: `https://api.builtwith.com/lists13/api.json`
 - **Method**: GET
 - **Parameters**: `KEY`, `TECH`, `OTHERTECHS`, `META`, `COUNTRY`, `OFFSET`, `SINCE`, `ALL`, `SPEND`, `REVENUE`, `SKU`, `FOLLOWERS`, `EMPLOYEES`, `SITEMAP`, `PAGERANK`, `BWRANK`, `TRANCO`, `MAJESTIC`, `BWS`, `ECAT`, `AIM`, `AIO`, `AIR`, `AIV`

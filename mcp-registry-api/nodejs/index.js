@@ -17,7 +17,7 @@ const params = new URLSearchParams({ KEY: apiKey });
 if (search) params.set('SEARCH', search);
 if (category) params.set('CATEGORY', category);
 if (offset) params.set('OFFSET', offset);
-const url = `https://api.builtwith.com/mcp1/api.json?${params.toString()}`;
+const url = `https://api.builtwith.com/mcp2/api.json?${params.toString()}`;
 
 console.log('BuiltWith MCP Registry API');
 console.log(`Searching for: ${search}`);

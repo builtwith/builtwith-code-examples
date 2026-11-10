@@ -50,7 +50,7 @@ async function main() {
     const params = new URLSearchParams(baseParams);
     if (offset) params.set('OFFSET', offset);
 
-    const result = await fetchJson(`https://api.builtwith.com/lists12/api.json?${params}`);
+    const result = await fetchJson(`https://api.builtwith.com/lists13/api.json?${params}`);
     const domains = result.Results || [];
 
     for (const entry of domains) {

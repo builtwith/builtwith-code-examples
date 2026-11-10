@@ -11,8 +11,8 @@ if (!apiKey || apiKey === 'your-api-key-here') {
   process.exit(1);
 }
 
-const params = new URLSearchParams({ KEY: apiKey, LOOKUP: lookup });
-const url = `https://api.builtwith.com/rv4/api.json?${params.toString()}`;
+const params = new URLSearchParams({ KEY: apiKey, LOOKUP: lookup, PAGE: process.env.PAGE || '1', IP: process.env.IP || 'no' });
+const url = `https://api.builtwith.com/rv5/api.json?${params.toString()}`;
 
 console.log('BuiltWith Relationships API');
 console.log(`Looking up: ${lookup}`);

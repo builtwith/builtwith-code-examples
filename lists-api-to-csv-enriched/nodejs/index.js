@@ -139,7 +139,7 @@ async function fetchDomains(tech, otherTechs, maxDomains, country, since) {
     if (offset) params.set('OFFSET', offset);
 
     console.log(`  Lists API page ${page}...`);
-    const data = await httpGet(`https://api.builtwith.com/lists12/api.json?${params}`);
+    const data = await httpGet(`https://api.builtwith.com/lists13/api.json?${params}`);
 
     for (const entry of data.Results || []) {
       if (entries.length >= maxDomains) break;
@@ -162,7 +162,7 @@ async function enrichDomain(domain) {
   const params = new URLSearchParams({ KEY: API_KEY, LOOKUP: domain });
   if (LIVEONLY) params.append('LIVEONLY', 'y');
 
-  const data = await httpGet(`https://api.builtwith.com/v25/api.json?${params}`);
+  const data = await httpGet(`https://api.builtwith.com/v26/api.json?${params}`);
   const results = data.Results || [];
   return results[0] || null;
 }

@@ -34,7 +34,7 @@ while total < max_domains:
     if offset:
         params["OFFSET"] = offset
 
-    response = requests.get("https://api.builtwith.com/lists12/api.json", params=params, timeout=30)
+    response = requests.get("https://api.builtwith.com/lists13/api.json", params=params, timeout=30)
     response.raise_for_status()
     result = response.json()
 

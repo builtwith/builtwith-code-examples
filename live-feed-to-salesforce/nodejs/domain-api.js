@@ -12,7 +12,7 @@ function buildDomainApiUrl(domain) {
   if (config.domainApiOptions.noMeta) params.append('NOMETA', 'y');
   if (config.domainApiOptions.noAttr) params.append('NOATTR', 'y');
 
-  return `https://api.builtwith.com/v25/api.json?${params.toString()}`;
+  return `https://api.builtwith.com/v26/api.json?${params.toString()}`;
 }
 
 async function getDomainProfile(domain) {

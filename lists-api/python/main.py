@@ -66,7 +66,7 @@ while True:
         page_params["OFFSET"] = current_offset
 
     print(f"Fetching page {page}...")
-    response = requests.get("https://api.builtwith.com/lists12/api.json", params=page_params)
+    response = requests.get("https://api.builtwith.com/lists13/api.json", params=page_params)
     response.raise_for_status()
     result = response.json()
 

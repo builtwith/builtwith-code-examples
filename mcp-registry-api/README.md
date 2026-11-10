@@ -74,7 +74,7 @@ Search and browse the BuiltWith MCP registry of other remote MCP servers BuiltWi
 
 ## API Reference
 
-- **Endpoint**: `https://api.builtwith.com/mcp1/api.json`
+- **Endpoint**: `https://api.builtwith.com/mcp2/api.json`
 - **Method**: GET
 - **Parameters**: `KEY`, `SEARCH`, `CATEGORY`, `OFFSET`
 - **Cost**: free — no API credits used. Rate limited to 1 request per second per API key (stricter than the general API rate limit since it's free)

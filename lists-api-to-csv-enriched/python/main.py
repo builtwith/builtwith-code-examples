@@ -105,7 +105,7 @@ def fetch_domains(tech, other_techs, max_domains, country, since):
             page_params["OFFSET"] = offset
 
         print(f"  Lists API page {page}...")
-        res = requests.get("https://api.builtwith.com/lists12/api.json", params=page_params, timeout=30)
+        res = requests.get("https://api.builtwith.com/lists13/api.json", params=page_params, timeout=30)
         res.raise_for_status()
         data = res.json()
 
@@ -130,7 +130,7 @@ def enrich_domain(domain):
     if LIVEONLY:
         params["LIVEONLY"] = "y"
 
-    res = requests.get("https://api.builtwith.com/v25/api.json", params=params, timeout=30)
+    res = requests.get("https://api.builtwith.com/v26/api.json", params=params, timeout=30)
     res.raise_for_status()
     data = res.json()
 

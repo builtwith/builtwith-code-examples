@@ -75,7 +75,7 @@ def get_domain_profile(domain):
         params["NOMETA"] = "y"
     if DOMAIN_API_NOATTR:
         params["NOATTR"] = "y"
-    res = requests.get("https://api.builtwith.com/v25/api.json", params=params, timeout=30)
+    res = requests.get("https://api.builtwith.com/v26/api.json", params=params, timeout=30)
     res.raise_for_status()
     data = res.json()
     results = data.get("Results", [])

@@ -28,6 +28,6 @@ if category:
 if offset:
     params["OFFSET"] = offset
 
-response = requests.get("https://api.builtwith.com/mcp1/api.json", params=params)
+response = requests.get("https://api.builtwith.com/mcp2/api.json", params=params)
 response.raise_for_status()
 print(json.dumps(response.json(), indent=2))

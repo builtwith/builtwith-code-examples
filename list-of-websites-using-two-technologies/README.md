@@ -35,6 +35,6 @@ python main.py
 
 ## API Reference
 
-- **Endpoint**: `https://api.builtwith.com/lists12/api.json`
+- **Endpoint**: `https://api.builtwith.com/lists13/api.json`
 - **Method**: GET
 - **Parameters**: `KEY`, `TECH`, `OTHERTECHS`, `COUNTRY`, `SINCE`, `OFFSET`
